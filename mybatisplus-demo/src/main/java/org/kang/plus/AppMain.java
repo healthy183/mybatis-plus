@@ -1,18 +1,14 @@
 package org.kang.plus;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.kang.plus.entity.Actor;
 import org.kang.plus.service.ActorService;
-import org.kang.plus.service.impl.ActorServiceImpl;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import javax.sql.DataSource;
 import java.util.List;
 
 /**
@@ -39,6 +35,5 @@ public class AppMain {
 
         DruidDataSource druidDataSource = run.getBean(DruidDataSource.class);
         System.out.println(druidDataSource == null);
-
     }
 }
