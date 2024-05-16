@@ -1,5 +1,7 @@
 package org.kang.plus.logicDel;
 
+import com.github.yulichang.toolkit.JoinWrappers;
+import com.github.yulichang.wrapper.DeleteJoinWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,6 +48,16 @@ public class LogicDelTest {
         MbpSample mbpSample = new  MbpSample();
         mbpSample.setId(1);
         mbpSampleMapper.deleteById(mbpSample);
+    }
+
+    @Test
+    @Deprecated
+    public void disableLogicDel(){
+        DeleteJoinWrapper<MbpSample> wrapper =
+                JoinWrappers.delete(MbpSample.class)
+                        .eq(MbpSample::getId, 1)
+                        .disableLogicDel(); // JoinWrappers支持取消逻辑删除
+        mbpSampleMapper.delete(wrapper);
     }
 
 }

@@ -36,7 +36,7 @@ public class SelectJoinListTest {
     @Test
     public void selectJoinList(){
         MPJLambdaWrapper<Film> objectMPJLambdaWrapper = new MPJLambdaWrapper<Film>()
-                .leftJoin(FilmActor.class, FilmActor::getFilmId, Film::getId)
+                .leftJoin(FilmActor.class,"fa", FilmActor::getFilmId, Film::getId)
                 .eq(Film::getId,3);
         List<FilmDTO> filmDTOS =
                 filmMapper.selectJoinList(FilmDTO.class, objectMPJLambdaWrapper);
@@ -57,4 +57,6 @@ public class SelectJoinListTest {
         List<FilmDTO> filmDTOS = filmMapper.selectJoinList(FilmDTO.class, objectMPJLambdaWrapper);
         System.out.println("result:"+filmDTOS.toString());
     }
+
+
 }

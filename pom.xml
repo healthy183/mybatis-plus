@@ -11,6 +11,7 @@
   <url>http://maven.apache.org</url>
   <modules>
     <module>mybatisplus-demo</module>
+    <module>mybatisplus-p6spy</module>
   </modules>
 
   <properties>

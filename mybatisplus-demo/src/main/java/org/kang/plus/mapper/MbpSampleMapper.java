@@ -1,7 +1,7 @@
 package org.kang.plus.mapper;
 
+import com.github.yulichang.base.MPJBaseMapper;
 import org.kang.plus.entity.MbpSample;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author healthy183
  * @since 2024-05-13
  */
-public interface MbpSampleMapper extends BaseMapper<MbpSample> {
+public interface MbpSampleMapper extends MPJBaseMapper<MbpSample> {
 
 }

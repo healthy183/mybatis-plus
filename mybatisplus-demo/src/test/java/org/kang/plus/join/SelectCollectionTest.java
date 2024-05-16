@@ -39,7 +39,7 @@ public class SelectCollectionTest {
         actorMPJLambdaWrapper
                 .selectAll(Actor.class)
                 .selectCollection(FilmActor.class, ActorDTO::getFilmActorList)
-                .leftJoin(FilmActor.class, FilmActor::getActorId, Actor::getId);
+                .leftJoin(FilmActor.class, "fa",FilmActor::getActorId, Actor::getId);
         List<ActorDTO> dtoList = actorMapper.selectJoinList(ActorDTO.class, actorMPJLambdaWrapper);
         dtoList.forEach(System.out::println);
     }

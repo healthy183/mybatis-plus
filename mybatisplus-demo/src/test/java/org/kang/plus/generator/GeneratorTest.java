@@ -19,10 +19,10 @@ public class GeneratorTest {
         String password = "Qq123456";
         //TODO 修改为自己的表名
         ArrayList<String> tables = new ArrayList<>();
-        // tables.add("actor"); //需要生成对应代码的表名的集合
+         tables.add("actor"); //需要生成对应代码的表名的集合
        // tables.add("film");
        // tables.add("film_actor");
-        tables.add("mbp_json");
+        // tables.add("mbp_json");
 
         FastAutoGenerator.create(url, username, password)
                 //全局配置----------------------------------------------------------------------------------------
